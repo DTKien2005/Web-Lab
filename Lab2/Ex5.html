@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Ex5</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                margin: 0;
+                background-color: #f4f4f4;
+            }
+
+            .container {
+                text-align: center;
+                background-color: white;
+            }
+
+            input[type="text"]{
+                padding: 8px;
+                margin: 10px;
+                width: 150px;
+                font-size: 16px;
+            }
+
+            button{
+                padding: 10px 20px;
+                margin: 10px;
+                font-size: 16px;
+                cursor: pointer;
+                background-color: #4CAF50;
+                color: white;
+                border: none;
+                border-radius: 5px;
+            }
+
+            button:hover {
+                background-color: bisque;
+            }
+        </style>
+
+    <script>
+        function calculate(operation){
+            const num1 = parseFloat(document.getElementById("num1").value);
+            const num2 = parseFloat(document.getElementById("num2").value);
+
+            if (isNaN(num1) || isNaN(num2)) {
+                alert("Please enter valid numbers.");
+                return;
+            }
+
+            var result;
+
+            if ( operation === "multiply" ) {
+                result = num1 * num2;
+            }  
+            else if (operation === "divide"){
+                if (num2 === 0) {
+                    alert("Cannot divide by zero.");
+                    return;
+                }
+                result = num1 / num2;
+            }   
+            document.getElementById("result").innerHTML = `The result is: ${result}`;
+        }
+    </script>
+
+    </head>
+    <body>
+        <div class="container">
+            <h2>Multiply and Divide two numbers:</h2>
+            <form>
+                <br>
+                <label>1st Number:</label>
+                <input type="number" id="num1">
+                <br>
+                <label>2nd Number:</label>
+                <input type="number" id="num2">
+                <br>
+                <button type="button" onclick="calculate('multiply')">Multiply</button>
+                <button type="button" onclick="calculate('divide')">Divide</button>
+            </form>
+            <p id="result" class="result"></p>
+        </div>
+    </body>
+</html>
