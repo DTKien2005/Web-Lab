@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Ex1</title>
+
+    </head>
+    <style>
+
+    </style>
+    <body>
+        <h2>Temperature conversion</h2>
+        <div>
+            <input type="number" id="Celsius" placeholder="Enter Celsius">
+            <button onclick="convertC()">Convert to Fahr</button>
+        </div>
+        <div>
+            <input type="number" id="Fahr" placeholder="Enter Farh">
+            <button onclick="convertF()">Convert to Celsius</button>
+        </div>
+
+        <div id ="result" class="result"></div>
+        <script>
+            function convertC() {
+                const Fahr = parseFloat(document.getElementById('Celsius').value);
+
+                const Celsius = (Fahr-32)*5/9;
+                document.getElementById("result").innerHTML = `${Fahr.toFixed(2)} = ${Celsius.toFixed(2)}`;
+
+            }
+
+            function convertF() {
+                const Celsius = parseFloat(document.getElementById('Fahr').value);
+
+                const Fahr = (Celsius*9/5) + 32;
+
+                document.getElementById("result").innerHTML = `${Celsius.toFixed(2)} = ${Fahr.toFixed(2)}`;
+            }
+        </script>
+    </body>
+</html>

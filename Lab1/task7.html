@@ -1,0 +1,34 @@
+<!--
+Question 7: Create a web page named task7.html, containing an image:
+• Decorate the image with a border
+- Color: red
+- Size: 5px
+- Solid
+• Use pseudo-class hover to change appearance of the image when the mouse is
+on the image
+-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Task 7</title>
+        <style>
+            /* External or Embedded CSS to add a red border around the image */
+            img {
+                border: 5px solid red;
+                transition: transform 0.3s ease;
+            }
+
+            /* Pseudo-class for hover effect */
+            img:hover {
+                transform: scale(1.1);
+            }
+        </style>
+    </head>
+    <body>
+
+        <h1>Image with Border and Hover Effect</h1>
+        <img src="birthday-art-genshinimpact-ayaka.jpg" alt="Ayaya" width="300" height="200">
+    </body>
+</html>

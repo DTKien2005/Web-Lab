@@ -1,0 +1,43 @@
+<!--
+Question 8: Create a web page named task8.html, containing three links to other
+pages:
+• Use property text-decoration to remove the underlines
+• If a link is visited, then its color becomes red
+• Change the color of the links to green when the mouse is over
+-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Task 8</title>
+        <style>
+            /* Remove underline from all links */
+            a {
+                text-decoration: none;
+                color: blue;
+            }
+
+            a:visited {
+                color: red;
+            }
+
+            a:hover {
+                color: green;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1>Links Example</h1>
+        <p>
+            <a href="task1.html">Link to Task 1</a>
+        </p>
+        <p>
+            <a href="task2.html">Link to Task 2</a>
+        </p>
+        <p>
+            <a href="task3-4.html">Link to Task 3-4</a>
+        </p>
+    </body>
+</html>

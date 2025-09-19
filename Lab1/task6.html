@@ -1,0 +1,40 @@
+<!--
+Question 6: Write a web page named task6.html, having two paragraphs. Define CSS
+rules so that:
+• Text size of the first paragraph is 0.5 of the normal font size (i.e. 1em).
+• Text color of the second paragraph is red.
+• Use id selector for the first paragraph, class selector for the second paragraph.
+• Add another paragraph (called the third paragraph) also having the red text.
+• Use inline style, embedded style, and external style for the created web page,
+having three paragraphs (first, second, third)
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 6</title>
+    <style>
+        /* Embedded CSS for the first and second paragraphs */
+        #first-paragraph {
+            font-size: 0.5em; /* Text size 0.5 of the normal font size */
+        }
+
+        .second-paragraph {
+            color: red; /* Text color for the second paragraph */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Inline style applied to the first paragraph -->
+    <p id="first-paragraph" style="font-size: 0.5em;">This is the first paragraph with text size 0.5 of the normal size.</p>
+
+    <!-- Second paragraph with class selector and red text color -->
+    <p class="second-paragraph">This is the second paragraph with red text color.</p>
+
+    <!-- Third paragraph with inline style for red text -->
+    <p style="color: red;">This is the third paragraph, which also has red text.</p>
+
+</body>
+</html>

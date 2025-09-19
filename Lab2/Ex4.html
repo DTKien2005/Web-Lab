@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTP-8">
+        <title>Ex 4</title>
+        <style>
+            body{
+                font-family: Arial, Helvetica, sans-serif;
+                text-align: center;
+            }
+            form {
+                display: inline-block;
+                margin-top: 20px;
+                text-align: left;
+            }
+            label {
+                display: inline-block;
+                width: 120px;
+                margin-bottom: 10px;
+            }
+            
+        </style>
+    </head>
+
+    <body>
+        <h2>Sign Up</h2>
+        <form onsubmit="checkPassword(event)">
+            <label>Username:</label>
+            <input type="text" name="user">
+            <br>
+            <label>Password:</label>
+            <input type="password" name="pass">
+            <br>
+            <label>Re-type Password:</label>
+            <input type="password" name="pass">
+            <br>
+            <label>
+                <input type="reset" name="reset">
+                <input type="submit" name="submit">
+            </label>
+        </form>
+
+        <script>
+            function checkPassword(event) {
+                var password = document.getElementById("password").value;
+                var confirmPassword = document.getElementById("confirmPassword").value;
+
+                if (password !== confirmPassword) {
+                    alert("Passwords do not match!");
+                    return false; // prevent form submission
+                }
+                alert("Sign Up Successful!");
+                return true; // allow form submission
+            }
+        </script>
+    </body>
+</html>

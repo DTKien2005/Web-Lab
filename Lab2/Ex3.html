@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Odd or Even Numbers</title>
+    </head>
+    <body>
+        <h2>Odd and Even Numbers from 1 to 15</h2>
+        <div id="output"></div>
+        <script>
+            let outputDiv = document.getElementById("output");
+
+            for (let i =1; i<=15; i++){
+                if (i % 2 === 0) {
+                    outputDiv.innerHTML += i + " is even <br>";
+                } else {
+                    outputDiv.innerHTML += i + " is odd <br>";
+                }
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Cal BMI</title>
+    </head>
+    <body>
+        <h2>BMI Calculation:</h2>
+        <div>
+            <input type="number" id="Height" placeholder="Enter Height(cm)">
+            <input type="number" id="Weight" placeholder="Enter Weight(kg)">
+            <button onclick="calBMI()">BMI</button>
+        </div>
+        <div id = "result" class = "result"></div>
+        <script>
+            function calBMI() {
+                const Height = parseFloat(document.getElementById('Height').value);
+                const Weight = parseFloat(document.getElementById('Weight').value);
+                const BMI = Weight/((Height/100)*(Height/100));
+                document.getElementById("result").innerHTML = `Your BMI is ${BMI}`;
+            }
+        </script>
+    </body>
+</html>
