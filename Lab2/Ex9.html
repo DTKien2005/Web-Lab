@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click Event Timer</title>
+</head>
+<body>
+    <h1>Heading1</h1>
+    <h2>Heading2</h2>
+    <p>Click on this Paragraph twice to measure time difference.</p>
+    <div id="log"></div>
+
+    <script>
+        let firstClickTime = null;
+        let secondClickTime = null;
+
+        // Function to handle click events and calculate time difference
+        function handleClickEvent() {
+            const currentTime = new Date().getTime();
+            console.log(`Current time: ${currentTime}`);  // Log current time for debugging
+
+            if (firstClickTime === null) {
+                // If this is the first click, store the time
+                firstClickTime = currentTime;
+                document.getElementById('log').innerHTML = 'First click recorded. Click again to measure the time between clicks.';
+                console.log('First click recorded');
+            } else {
+                // If this is the second click, calculate the difference
+                secondClickTime = currentTime;
+                const timeDifference = secondClickTime - firstClickTime;
+                document.getElementById('log').innerHTML = `Time between clicks: ${timeDifference} milliseconds`;
+                console.log(`Time difference: ${timeDifference} milliseconds`);
+
+                // Reset for the next pair of clicks
+                firstClickTime = null;
+                secondClickTime = null;
+            }
+        }
+
+        // Attach the handleClickEvent function to the paragraph click event
+        const paragraph = document.querySelector('p');
+        if (paragraph) {
+            paragraph.addEventListener('click', handleClickEvent);
+        } else {
+            console.error('Paragraph element not found.');
+        }
+    </script>
+</body>
+</html>

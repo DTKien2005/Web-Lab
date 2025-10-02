@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ex8</title>
+        <style>
+            a {
+                text-decoration: none;
+                color: blue;
+            }
+
+            a.visited {
+                color: red;
+            }
+            /*
+            a:hover {
+                color: green;
+            } */
+        </style>
+    </head>
+    <body>
+        <h1>Welcome to Task 8</h1>
+        <p>Click the links below:</p>
+        <ul>
+            <li><a href="Ex1.html" id="link1">Page 1</a></li>
+            <li><a href="Ex2.html" id="link2">Page 2</a></li>
+            <li><a href="Ex3.html" id="link3">Page 3</a></li>
+        </ul>
+
+        <script>
+            // Function to handle mouseover event (change color to green)
+            function handleMouseOver(event) {
+                if (!event.target.classList.contains('visited')) {
+                    event.target.style.color = 'green';
+                }
+            }
+            
+            // Function to handle mouseout event (reset color to blue)
+            function handleMouseOut(event) {
+                if (!event.target.classList.contains('visited')) {
+                    event.target.style.color = 'blue';
+                }
+            }
+
+            // Function to handle mouseout event (reset color to blue)
+            function handleClick(event) {
+                event.preventDefault(); // Prevent the link from navigating immediately
+                event.target.classList.add('visited');
+                localStorage.setItem(event.target.id, 'visited'); // Store visited state in localStorage
+
+                // Simulate navigation after a delay
+                setTimeout(() => {
+                    window.location.href = event.target.href;
+                }, 200);
+            }
+
+            // Get all the links and add event listeners
+            const links = document.querySelectorAll('a');
+
+            links.forEach(link => {
+                // Check if the link was visited before (from localStorage)
+                if (localStorage.getItem(link.id) === 'visited') {
+                    link.classList.add('visited');
+                    link.style.color = 'red';
+                }
+
+                // Add event listeners for hover and click
+                link.addEventListener('mouseover', handleMouseOver);
+                link.addEventListener('mouseout', handleMouseOut);
+                link.addEventListener('click', handleClick);
+            });
+        </script>
+    </body>
+</html>
